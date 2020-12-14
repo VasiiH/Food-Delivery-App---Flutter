@@ -5,6 +5,7 @@ import 'package:flutter_food_delevery/widgets/near_by_restaurants.dart';
 import 'package:flutter_food_delevery/widgets/build_resturent.dart';
 import 'package:flutter_food_delevery/screens/card_screen.dart';
 import 'card_screen.dart';
+import 'package:flutter_food_delevery/screens/mi_card.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,7 +13,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: IconButton(
           icon: Icon(Icons.account_circle),
           iconSize: 30.00,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyCard()),
+            );
+          },
         ),
         title: Text('Food Delivery'),
         actions: [
@@ -29,7 +34,12 @@ class _HomeScreenState extends State<HomeScreen> {
               'cart (${currentUser.cart.length})',
               style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) =>  CartScreen(),),),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => CartScreen(),
+              ),
+            ),
           )
         ],
       ),

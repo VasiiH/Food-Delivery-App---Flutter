@@ -10,6 +10,9 @@ class _MyCardState extends State<MyCard> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.pink,
+        appBar: AppBar(
+        title: Text('Food Delivery'),
+      ),
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
